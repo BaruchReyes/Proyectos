@@ -1,13 +1,11 @@
-
 package tipos.de.medidas;
 
 import java.util.Scanner;
 
 /**
  *
- * @author ISC  Baruch Reyes 
- * Este codigo es de uso libre solo quiero que me pongas en creditos si lo llegas a usar xD
- * Me dio hueva hacerle interfaz pero aqui esta xD
+ * @author ISC Baruch Reyes Este codigo es de uso libre solo quiero que me
+ * pongas en creditos si lo llegas a usar xD
  */
 public class TiposDeMedidas {
 
@@ -17,27 +15,24 @@ public class TiposDeMedidas {
         TiposDeMedidas obj = new TiposDeMedidas();
 
         int opt;
-        int optb = 0;
+
         Scanner entrada = new Scanner(System.in);
 
         System.out.println("Ingrese el tipo de medida de temperatura de su pais");
-        System.out.println("1.-Celcius\n"
-                + "2.- Fahrenheit\n"
-                + "3.- Kelvin\n"
-                + "4.- Rankine\n"
-                + "5.- Réaumur");
+        System.out.println("1.- |Celcius|\n"
+                + "2.- |Fahrenheit|\n"
+                + "3.- |Kelvin|\n"
+                + "4.- |Rankine|\n"
+                + "5.- |Réaumur|");
 
         opt = entrada.nextInt();
-        do{
-            
-        }while (opt!=6);
+
         switch (opt) {
 
             case 1:
-               if (optb == 1){
-                  obj.converirdesdecelcius();
-            }
-               else 
+
+                obj.converirdesdecelcius();
+
                 break;
 
             case 2:
