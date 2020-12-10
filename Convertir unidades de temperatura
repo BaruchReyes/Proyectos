@@ -1,0 +1,191 @@
+
+package tipos.de.medidas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ISC  Baruch Reyes 
+ * Este codigo es de uso libre solo quiero que me pongas en creditos si lo llegas a usar xD
+ * Me dio hueva hacerle interfaz pero aqui esta xD
+ */
+public class TiposDeMedidas {
+
+    Scanner entrada = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        TiposDeMedidas obj = new TiposDeMedidas();
+
+        int opt;
+        int optb = 0;
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Ingrese el tipo de medida de temperatura de su pais");
+        System.out.println("1.-Celcius\n"
+                + "2.- Fahrenheit\n"
+                + "3.- Kelvin\n"
+                + "4.- Rankine\n"
+                + "5.- Réaumur");
+
+        opt = entrada.nextInt();
+        do{
+            
+        }while (opt!=6);
+        switch (opt) {
+
+            case 1:
+               if (optb == 1){
+                  obj.converirdesdecelcius();
+            }
+               else 
+                break;
+
+            case 2:
+                obj.converfaren();
+                break;
+
+            case 3:
+                obj.converkel();
+                break;
+
+            case 4:
+                obj.converrankine();
+                break;
+
+            case 5:
+                obj.converreamur();
+                break;
+
+        }
+
+    }
+
+    public void converirdesdecelcius() {
+        ////////////////////////////////////////  variables de este metodo el cual sirve desde celcius
+        float celcius;
+        float faren;
+        float kelvin;
+        float rankine;
+        float rea;
+        // para convertir de celcius para  faren tenemos que usar la formula (0 °C × 9/5) + 32 = 32 °F
+        // para convertir de celcius a kelvin se una la formula 0 °C + 273.15 = 273.15 K
+        // Para converir de celcisu a rakine se usa la formila : 0 °C × 9/5 + 491.67 = 491.67 °R
+        // Para convertir de celcius a reaumur se usa la formula de celcius  * 0.8 
+        System.out.println("Hola usted eligio la unidad de temperatura  CELCIUS");
+        System.out.println("Ingrese la temperatura que desea convertir");
+        celcius = entrada.nextFloat();
+        /////////////////////////////////zona de operaciones////////////////
+        kelvin = (float) (celcius + 273.15);
+        faren = (celcius * 9 / 5) + 32;
+        rankine = (float) (celcius * 1.8 + 491.67);
+        rea = (float) (celcius * 0.8);
+        //////////////////////////////////////////////////////////////
+        System.out.println(" La temperatura en la unidad Fahrenheit es:" + faren + "°F");
+        System.out.println(" La tenperatura de la unidad Kelvin es:" + kelvin + "°K");
+        System.out.println(" La tenperatura de la unidad Rankine es:" + rankine + "°R");
+        System.out.println(" La temperatura de la unidad Réaumur es" + rea + "°R");
+    }
+
+    public void converfaren() {
+        /////////////////////LAS MISMAS VARIABLES PERO ENCAPSULADAS EN SOLO EL METODO CONVERFAREN
+        float faren;
+        float celcius;
+        float kelvin;
+        float rankine = 0;
+        float rea = 0;
+        // Para converir de Faren a celcius se usa : (500 °F − 32) × 5/9 = 260 °C
+        // Para convertir de Faren a Kelvin se usa : (32 °F − 32) × 5/9 + 273.15 = 273.15 K
+        // Para convertir de Faren a rankine se ua : 32 °F + 459.67 = 491.67 °R
+        // Para convertir de Faren a  rea se usa :  faren *-26.17764
+        System.out.println("Hola usted eligio la unidad de temperatura  Fahrenheit");
+        System.out.println("Ingrese la temperatura que desea convertir");
+        faren = entrada.nextFloat();
+        ////////////zona de operaciones/////////////////////////
+        celcius = (float) ((faren - 32) * 5 / 9);
+        kelvin = (float) ((faren - 32) * 5 / 9 + 273.15);
+        rankine = (float) (faren + 459.67);
+        rea = (faren - 32) * 4 / 9;
+        System.out.println(" La temperatura de la unidad Celcius es:" + celcius + "°C");
+        System.out.println(" La temperatura de la unidad Kelvin es" + kelvin + "°K");
+        System.out.println(" La temperatura de la unidad Rankine es" + rankine + "°R");
+        System.out.println(" La temperatura de la unidad Réamour es" + rea + "°R");
+    }
+
+    public void converkel() {
+        //////////////////// Las mismas variables pero encapsuladas de nuevo!!!  
+        float kelvin; // estamos con este
+        float celcius;
+        float faren;
+        float rankine = 0;
+        float rea = 0;
+        // Para converir de kelvin a celcius se usa : 30 K − 273.15 = -243.1 °C
+        // Para convertir de kelvin a faren  se usa : (0 K − 273.15) × 9/5 + 32 = -459.7 °F
+        // Para convertir de kelvin a rankine se usa :  kelvin *1.8
+        // Para convertir dekelvin a  rea se usa : (k-273.15)*0.8
+        System.out.println("Hola usted eligio la unidad de temperatura   Kelvin");
+        System.out.println("Ingrese la temperatura que desea convertir");
+        kelvin = entrada.nextFloat();
+        ////////////zona de operaciones/////////////////////////
+        celcius = (float) (kelvin - 273.15);
+        faren = (float) ((kelvin - 273.15) * 9 / 5 + 32);
+        rankine = (float) (kelvin * 1.8);
+        rea = (float) ((kelvin - 273.15) * 0.8);
+        System.out.println(" La temperatura de la unidad Celcius es:" + celcius + "°C");
+        System.out.println(" La temperatura de la unidad Fahrenheit es:" + faren + "°K");
+        System.out.println(" La temperatura de la unidad Rankine es:" + rankine + "°R");
+        System.out.println(" La temperatura de la unidad Réamour es:" + rea + "°R");
+
+    }
+
+    public void converrankine() {
+        //////////////////// Las mismas variables pero encapsuladas de nuevo!!!  
+        float rankine = 0;// estamos con este
+        float celcius;
+        float faren;
+        float kelvin;
+        float rea;
+        // Para converir de rankine a celcius se usa : (1 °R − 491.67) × 5/9 = -272.6 °C
+        // Para convertir de rankine a faren  se usa : 1 °R − 459.67 = -458.7 °F
+        // Para convertir de rankine a Kelvin se usa : 1 °R × 5/9 = 0.5556 K
+        // Para convertir de rankine a  rea se usa : (R-491.67)*4/9
+        System.out.println("Hola usted eligio la unidad de temperatura Rankine");
+        System.out.println("Ingrese la temperatura que desea convertir");
+        rankine = entrada.nextFloat();
+        ////////////zona de operaciones/////////////////////////
+        celcius = (float) ((rankine - 491.67) * 5 / 9);
+        faren = (float) (rankine - 459.67);
+        kelvin = rankine * 5 / 9;
+        rea = (float) ((rankine - 491.67) * 4 / 9);
+        System.out.println("La temperatura convertida a CELCIUS es :" + celcius + "°C");
+        System.out.println("La temperatura convertida a Fahrenheit es :" + faren + "°F");
+        System.out.println("La temperatura convertida a KELVIN es :" + kelvin + "°K");
+        System.out.println("La temperatura convertida a Reamu es :" + rea + "°R");
+
+    }
+
+    public void converreamur() {
+        //////////////////// Las mismas variables pero encapsuladas de nuevo!!!  
+        float rea = 0;// estamos con este
+        float celcius;
+        float faren;
+        float kelvin;
+        float rankine;
+        // Para convertir de reamur a CELCIUS se usa RE*1.25
+        // Para convertir de reamur a FAREN se esa  (RE *2.25)+32
+        // Para  convertir de reamur a KELVIN se usa (RE*1.25)+273.15
+        //Para converir de reamur a rankine se usa (RE*2.25)+491.67
+        System.out.println("Hola usted eligio la unidad de temperatura Reamur");
+        System.out.println("Ingrese la temperatura que desea convertir");
+        rea = entrada.nextFloat();
+        celcius = (float) (rea * 1.25);
+        faren = (float) ((rea * 2.25) + 32);
+        kelvin = (float) ((rea * 1.25) + 273.15);
+        rankine = (float) ((rea * 2.25) + 491.67);
+        System.out.println("La temperatura convertida a CELCIUS es :" + celcius + "°C");
+        System.out.println("La temperatura convertida a Fahrenheit es :" + faren + "°F");
+        System.out.println("La temperatura convertida a KELVIN es :" + kelvin + "°K");
+        System.out.println("La temperatura convertida a Rankine es :" + rankine + "°R");
+
+    }
+
+}
